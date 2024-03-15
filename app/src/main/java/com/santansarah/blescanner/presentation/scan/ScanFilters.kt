@@ -79,6 +79,8 @@ private fun ScanFilterButtons(
         FilterChip(
             modifier = Modifier.width(84.dp),
             border = FilterChipDefaults.filterChipBorder(
+                enabled = false,
+                selected = scanFilterOption?.ordinal == index,
                 borderColor = MaterialTheme.colorScheme.secondary,
                 //selectedBorderColor = MaterialTheme.colorScheme.outline
             ),
@@ -138,7 +140,7 @@ fun PreviewScanFilters() {
 @Preview
 @Composable
 fun PreviewScanFiltersLandscape() {
-    BLEScannerTheme() {
+    BLEScannerTheme {
         Surface {
             ScanFilters({}, ScanFilterOption.FAVORITES, landscapeNormal)
         }

@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.MaterialTheme
@@ -17,6 +16,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.santansarah.blescanner.domain.models.SCAN_FILTERS
@@ -27,7 +27,6 @@ import com.santansarah.blescanner.presentation.theme.BLEScannerTheme
 import com.santansarah.blescanner.utils.windowinfo.AppLayoutInfo
 import com.santansarah.blescanner.utils.windowinfo.AppLayoutMode
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ScanFilters(
     onFilter: (ScanFilterOption?) -> Unit,
@@ -70,7 +69,6 @@ fun ScanFilters(
 }
 
 @Composable
-@OptIn(ExperimentalMaterial3Api::class)
 private fun ScanFilterButtons(
     scanFilterOption: ScanFilterOption?,
     onFilter: (ScanFilterOption?) -> Unit
@@ -102,6 +100,8 @@ private fun ScanFilterButtons(
                 Text(
                     modifier = Modifier.offset(x = (-5).dp),
                     text = scanFilter.text,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
                     style = MaterialTheme.typography.bodySmall,
                     textAlign = TextAlign.Center
                     //color = MaterialTheme.colorScheme.onSecondaryContainer
@@ -130,7 +130,7 @@ private fun ScanFilterButtons(
 @Preview
 @Composable
 fun PreviewScanFilters() {
-    BLEScannerTheme() {
+    BLEScannerTheme {
         Surface {
             ScanFilters({}, ScanFilterOption.FAVORITES, portrait)
         }

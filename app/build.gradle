@@ -115,40 +115,39 @@ dependencies {
     implementation(libs.skydoves.colorpicker.compose)
 
     // window layout
-    implementation("androidx.window:window:1.1.0-alpha04")
-    implementation("androidx.compose.material3:material3-window-size-class:1.1.0-alpha06")
+    implementation(libs.androidx.window)
+    implementation(libs.androidx.window.material3)
 
     //testing
-    testImplementation("io.insert-koin:koin-test:$koin_android_version")
-    testImplementation("io.insert-koin:koin-test-junit5:$koin_android_version")
+    testImplementation(libs.io.koin.test)
+    testImplementation(libs.io.koin.test.junit5)
 
-    testImplementation("androidx.room:room-testing:$room_version")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.2")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
-    testImplementation("io.mockk:mockk:1.13.3")
+    testImplementation(libs.androidx.room.testing)
+    testImplementation(libs.org.junit.jupiter.api)
+    testRuntimeOnly(libs.org.junit.jupiter.engine)
+    testImplementation(libs.org.kotlinx.coroutines.test)
+    testImplementation(libs.io.mockk)
 
     androidTestImplementation project(":sharedTest")
-    androidTestImplementation("androidx.room:room-testing:$room_version")
-    kaptAndroidTest("androidx.room:room-compiler:$room_version")
+    androidTestImplementation(libs.androidx.room.testing)
+    kaptAndroidTest(libs.androidx.room.compiler)
 
-    androidTestImplementation("io.insert-koin:koin-test:$koin_android_version")
-    androidTestImplementation("io.insert-koin:koin-test-junit5:$koin_android_version")
-    androidTestImplementation("androidx.test:core:1.5.0")
-    androidTestImplementation("androidx.test:runner:1.5.2")
-    androidTestImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
-    androidTestImplementation("de.mannodermaus.junit5:android-test-core:1.3.0")
-    androidTestRuntimeOnly("de.mannodermaus.junit5:android-test-runner:1.3.0")
+    androidTestImplementation(libs.io.koin.test)
+    androidTestImplementation(libs.io.koin.test.junit5)
+    androidTestImplementation(libs.androidx.core.test)
+    androidTestImplementation(libs.androidx.test.runner)
+    androidTestImplementation(libs.org.junit.jupiter.api)
+    androidTestImplementation(libs.mannodermaus.android.core.test)
+    androidTestRuntimeOnly(libs.mannodermaus.android.test.runner)
     //androidTestImplementation 'org.junit.platform:junit-platform-suite-engine:1.9.2'
-    androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
-    androidTestImplementation("io.mockk:mockk-android:1.13.3")
-    androidTestImplementation("app.cash.turbine:turbine:0.12.1")
-    androidTestImplementation("androidx.work:work-testing:2.8.0")
+    androidTestImplementation(libs.org.kotlinx.coroutines.test)
+    androidTestImplementation(libs.io.mockk.android)
+    androidTestImplementation(libs.app.cash.turbine)
+    androidTestImplementation(libs.androidx.work.testing)
 
     // Compose testing dependencies
-    androidTestImplementation("androidx.compose.ui:ui-test")
+    androidTestImplementation(libs.androidx.compose.ui.test)
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.4.0-beta02")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     androidTestImplementation("de.mannodermaus.junit5:android-test-compose:0.1.0-SNAPSHOT")
 

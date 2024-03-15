@@ -79,7 +79,7 @@ skydoves-colorpicker-compose = { group = "com.github.skydoves", name = "colorpic
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+org-jetbrains-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 kotlin-symbol-processor = { id = "com.google.devtools.ksp", version.ref = "kotlinSymbolProcessor" }
-org-jetbrains-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt",  version.ref = "kotlin"  }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 mannodermaus-android-junit5-plugin = { id = "de.mannodermaus.android-junit5", version.ref = "mannodermausJunit5Plugin" }

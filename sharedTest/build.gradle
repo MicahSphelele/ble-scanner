@@ -40,7 +40,7 @@ android {
 dependencies {
 
     implementation(libs.androix.core.ktx)
-    implementation("io.mockk:mockk:1.13.3")
+    implementation(libs.io.mockk)
     api project(path: ":app")
 
     implementation(libs.androix.lifecycle.runtime.ktx)
@@ -53,6 +53,4 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.compose)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
-
-
 }

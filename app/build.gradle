@@ -1,9 +1,9 @@
 plugins {
-    id 'kotlin-kapt'
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
-    id 'org.jetbrains.kotlin.plugin.serialization'
-    id 'de.mannodermaus.android-junit5'
+    id("kotlin-kapt")
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.plugin.serialization")
+    id("de.mannodermaus.android-junit5")
 }
 
 android {
@@ -93,15 +93,10 @@ dependencies {
     implementation(libs.timber)
     implementation(libs.kotlinx.serialization.json)
 
-    def room_version = "2.5.0"
-
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     annotationProcessor(libs.androidx.room.compiler)
     kapt(libs.androidx.room.compiler)
-
-    def koin_android_version= "3.3.2"
-    def koin_android_compose_version= "3.4.1"
 
     implementation(libs.io.koin.android)
     implementation(libs.io.koin.android.compat)
@@ -147,9 +142,6 @@ dependencies {
 
     // Compose testing dependencies
     androidTestImplementation(libs.androidx.compose.ui.test)
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.4.0-beta02")
-
-    androidTestImplementation("de.mannodermaus.junit5:android-test-compose:0.1.0-SNAPSHOT")
-
-
+    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+    androidTestImplementation(libs.mannodermaus.android.test.compose)
 }
